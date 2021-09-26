@@ -1,2 +1,20 @@
-this line is modified by veerababu
-hi this line is created by veerababu
+{
+  "Version": "2012-10-17",
+  "Id": "example-ID",
+  "Statement": [
+    {
+      "Sid": "example-statement-ID",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "arn:aws:sns:ap-south-1:032024865076:s3-event-notifications",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:*:*:s3-bucke-01"
+        }
+      }
+    }
+  ]
+}
